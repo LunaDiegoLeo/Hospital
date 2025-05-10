@@ -1,0 +1,16 @@
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #888 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 0 5 0;
+    -fx-text-fill: #000000; /* Cambia esto si el fondo de tu app es claro */
+    -fx-font-size: 14px;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.text-field:focused {
+    -fx-border-color: transparent transparent #00bcd4 transparent; /* color de la línea al enfocar */
+    -fx-border-width: 0 0 2 0;
+}

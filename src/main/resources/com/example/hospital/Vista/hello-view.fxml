@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="520.0" prefWidth="623.0" spacing="20.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+       <image>
+           <Image url="@../imagenes/new.jpg" />
+       </image>
+   </ImageView>
+   <Label text="Usuario">
+      <font>
+         <Font name="Berlin Sans FB" size="16.0" />
+      </font>
+   </Label>
+   <TextField fx:id="usuario" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css">
+      <font>
+         <Font size="13.0" />
+      </font></TextField>
+
+    <Label fx:id="welcomeText" text="Contaseña">
+      <font>
+         <Font name="Berlin Sans FB" size="16.0" />
+      </font></Label>
+   <PasswordField fx:id="pass" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css">
+      <font>
+         <Font size="13.0" />
+      </font></PasswordField>
+    <Button fx:id="logbo" onAction="#onHelloButtonClick" prefHeight="44.0" prefWidth="87.0" stylesheets="@../css/boton.css" text="Entrar">
+      <font>
+         <Font name="Berlin Sans FB" size="15.0" />
+      </font></Button>
+</VBox>
