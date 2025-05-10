@@ -15,25 +15,24 @@
     <VBox layoutX="60.0" layoutY="100.0" spacing="20">
       <Button fx:id="admin" onAction="#irAdmin" prefWidth="200" styleClass="blue-button" text="Administrador" />
         <Button fx:id="pac" onAction="#irPaciente" prefWidth="200" styleClass="blue-button" text="Paciente" />
-        <Button prefWidth="200" styleClass="blue-button" text="Doctor" />
-        <Button prefWidth="200" styleClass="blue-button" text="Enfermero" />
-      <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Compañia" />
-      <Button prefWidth="200.0" styleClass="blue-button" text="Estudios de laboratorio" />
-      <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Laboratorio" />
+        <Button fx:id="doc" onAction="#irDoctor" prefWidth="200" styleClass="blue-button" text="Doctor" />
+        <Button fx:id="enfe" onAction="#irEnfermero" prefWidth="200" styleClass="blue-button" text="Enfermero" />
+      <Button fx:id="compa" mnemonicParsing="false" onAction="#irCompania" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Compañia" />
+      <Button fx:id="lab" mnemonicParsing="false" onAction="#irLabo" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Laboratorio" />
     </VBox>
    <VBox layoutX="343.0" layoutY="100.0" spacing="20">
       <children>
-         <Button prefWidth="200" styleClass="blue-button" text="Departamento" />
-         <Button prefWidth="200" styleClass="blue-button" text="Sala" />
-         <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="199.0" styleClass="blue-button" text="Especialidades" />
-         <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Intervenciones" />
-         <Button prefWidth="200" styleClass="blue-button" text="Mediamentos" />
-         <Button prefWidth="200.0" styleClass="blue-button" text="Presentacion" />
+         <Button fx:id="est" onAction="#irEst" prefWidth="200.0" styleClass="blue-button" text="Estudios de laboratorio" />
+         <Button fx:id="depa" onAction="#irDepa" prefWidth="200" styleClass="blue-button" text="Departamento" />
+         <Button fx:id="sala" onAction="#irSala" prefWidth="200" styleClass="blue-button" text="Sala" />
+         <Button fx:id="inter" onAction="#irInter" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Intervenciones" />
+         <Button fx:id="medi" onAction="#irMedi" prefWidth="200" styleClass="blue-button" text="Mediamentos" />
+         <Button fx:id="prese" onAction="#irPrese" prefWidth="200.0" styleClass="blue-button" text="Presentacion" />
       </children>
    </VBox>
    <VBox layoutX="200.0" layoutY="525.0" prefHeight="68.0" prefWidth="200.0">
       <children>
-         <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Cerrar sesión" />
+         <Button fx:id="cerrar" onAction="#cerrar" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Cerrar sesión" />
       </children>
    </VBox>
 

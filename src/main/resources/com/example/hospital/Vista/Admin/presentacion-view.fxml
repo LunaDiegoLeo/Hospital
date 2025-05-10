@@ -8,7 +8,7 @@
 
 <AnchorPane prefHeight="449.0" prefWidth="465.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../css/admin-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.GenericController">
     <children>
-        <Label layoutX="25.0" layoutY="29.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Administrador" />
+        <Label layoutX="25.0" layoutY="29.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Presentación" />
         <VBox layoutX="164.0" layoutY="93.0" prefHeight="200.0" prefWidth="138.0" spacing="20">
             <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Agregar" />
             <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Buscar" />
@@ -22,4 +22,3 @@
         <URL value="@../../css/admin-style.css" />
     </stylesheets>
 </AnchorPane>
-
