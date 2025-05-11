@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="449.0" prefWidth="465.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../../css/admin-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.GenericController">
     <children>
@@ -16,10 +17,19 @@
             <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Actualizar" />
             <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Eliminar" />
         </VBox>
-        <Button fx:id="regresar" onAction="#regresar" layoutX="188.0" layoutY="391.0" mnemonicParsing="false" styleClass="red-button" text="Regresar" />
+        <Button fx:id="regresar" layoutX="188.0" layoutY="391.0" mnemonicParsing="false" onAction="#regresar" styleClass="red-button" text="Regresar" />
+      <Label layoutX="25.0" layoutY="6.0" prefHeight="17.0" prefWidth="82.0" text="Bienvenido: ">
+         <font>
+            <Font name="Arial" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="usua" layoutX="107.0" layoutY="7.0" text="     ">
+         <font>
+            <Font name="Arial Bold" size="13.0" />
+         </font>
+      </Label>
     </children>
     <stylesheets>
         <URL value="@../../css/admin-style.css" />
     </stylesheets>
 </AnchorPane>
-

@@ -18,7 +18,7 @@ public class HelloController {
     protected void onHelloButtonClick() {
         try {
             AdminView adminView = new AdminView();
-            adminView.mostrar();
+            adminView.mostrar(usuario.getText());
 
             logbo.getScene().getWindow().hide();
         } catch (Exception e) {

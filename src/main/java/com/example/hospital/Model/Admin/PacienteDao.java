@@ -34,4 +34,9 @@ public class PacienteDao extends Dao<Paciente> {
     public void listar() {
 
     }
+
+    @Override
+    public void exitir() {
+
+    }
 }

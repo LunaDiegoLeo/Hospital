@@ -5,25 +5,33 @@ import com.example.hospital.Vista.Admin.GenericView;
 import com.example.hospital.Vista.Admin.GenericView;
 import com.example.hospital.Vista.login;
 import javafx.fxml.FXML;
-
+import javafx.scene.control.Label;
 import javafx.scene.control.Button;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.sql.Connection;
 
 public class AdminController {
-    private Connection connection= ConexioBD.getConnection();
 
     @FXML
     private Button pac;
+
+    @FXML
+    private Label usua;
+
     public AdminController() throws Exception {
+    }
+
+    public void setText(String text){
+        usua.setText(text);
     }
 
     @FXML
     protected void irAdmin() {
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("admin-se.fxml");
+            paciente.mostrar("admin-se.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -34,7 +42,7 @@ public class AdminController {
     protected  void irPaciente() {
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("paciente-view.fxml");
+            paciente.mostrar("paciente-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -47,7 +55,7 @@ public class AdminController {
     protected void irDoctor(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("doctor-view.fxml");
+            paciente.mostrar("doctor-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -59,7 +67,7 @@ public class AdminController {
     protected void irEnfermero(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("enfermero-view.fxml");
+            paciente.mostrar("enfermero-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -71,7 +79,7 @@ public class AdminController {
     protected void irCompania(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("compania-view.fxml");
+            paciente.mostrar("compania-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -83,7 +91,7 @@ public class AdminController {
     protected void irLabo(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("laboratorio-view.fxml");
+            paciente.mostrar("laboratorio-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -95,7 +103,7 @@ public class AdminController {
     protected void irEst(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("estudioslab-view.fxml");
+            paciente.mostrar("estudioslab-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -107,7 +115,7 @@ public class AdminController {
     protected void irDepa(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("departamento-view.fxml");
+            paciente.mostrar("departamento-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -119,7 +127,7 @@ public class AdminController {
     protected void irSala(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("sala-view.fxml");
+            paciente.mostrar("sala-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -131,7 +139,7 @@ public class AdminController {
     protected void irInter(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("intervenciones-view.fxml");
+            paciente.mostrar("intervenciones-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -143,7 +151,7 @@ public class AdminController {
     protected void irMedi(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("medicamentos-view.fxml");
+            paciente.mostrar("medicamentos-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -155,7 +163,7 @@ public class AdminController {
     protected void irPrese(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("presentacion-view.fxml");
+            paciente.mostrar("presentacion-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {

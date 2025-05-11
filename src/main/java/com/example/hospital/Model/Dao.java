@@ -14,5 +14,6 @@ public abstract class Dao <T>{
     public abstract void modificar(T t);
     public abstract T consultar(T t);
     public abstract void listar();
+    public abstract void exitir();
 
 }

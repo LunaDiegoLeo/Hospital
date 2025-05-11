@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="607.0" prefWidth="600" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.AdminController">
 
@@ -25,16 +26,26 @@
          <Button fx:id="est" onAction="#irEst" prefWidth="200.0" styleClass="blue-button" text="Estudios de laboratorio" />
          <Button fx:id="depa" onAction="#irDepa" prefWidth="200" styleClass="blue-button" text="Departamento" />
          <Button fx:id="sala" onAction="#irSala" prefWidth="200" styleClass="blue-button" text="Sala" />
-         <Button fx:id="inter" onAction="#irInter" mnemonicParsing="false" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Intervenciones" />
+         <Button fx:id="inter" mnemonicParsing="false" onAction="#irInter" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Intervenciones" />
          <Button fx:id="medi" onAction="#irMedi" prefWidth="200" styleClass="blue-button" text="Mediamentos" />
          <Button fx:id="prese" onAction="#irPrese" prefWidth="200.0" styleClass="blue-button" text="Presentacion" />
       </children>
    </VBox>
    <VBox layoutX="200.0" layoutY="525.0" prefHeight="68.0" prefWidth="200.0">
       <children>
-         <Button fx:id="cerrar" onAction="#cerrar" mnemonicParsing="false" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Cerrar sesión" />
+         <Button fx:id="cerrar" mnemonicParsing="false" onAction="#cerrar" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Cerrar sesión" />
       </children>
    </VBox>
+   <Label layoutX="30.0" layoutY="6.0" prefHeight="17.0" prefWidth="82.0" text="Bienvenido: ">
+      <font>
+         <Font name="Arial" size="13.0" />
+      </font>
+   </Label>
+   <Label fx:id="usua" layoutX="118.0" layoutY="7.0" text="     ">
+      <font>
+         <Font name="Arial Bold" size="13.0" />
+      </font>
+   </Label>
 
     <!-- Estilos inline -->
     <stylesheets>
