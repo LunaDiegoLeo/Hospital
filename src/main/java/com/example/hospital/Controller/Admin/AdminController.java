@@ -31,7 +31,7 @@ public class AdminController {
     protected void irAdmin() {
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("admin-se.fxml",usua.getText());
+            paciente.mostrar("admin-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {

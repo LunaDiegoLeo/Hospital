@@ -1,6 +1,7 @@
 package com.example.hospital.Model;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public abstract class Dao <T>{
     protected Connection connection;
@@ -9,11 +10,11 @@ public abstract class Dao <T>{
         this.connection = connection;
     }
 
-    public abstract void insertar(T t);
-    public abstract void eliminar(T t);
-    public abstract void modificar(T t);
-    public abstract T consultar(T t);
-    public abstract void listar();
-    public abstract void exitir();
+    public abstract boolean insertar(T t);
+    public abstract boolean eliminar(String id);
+    public abstract boolean modificar(String id);
+    public abstract T consultar(String id);
+    public abstract ArrayList<T> listar();
+
 
 }

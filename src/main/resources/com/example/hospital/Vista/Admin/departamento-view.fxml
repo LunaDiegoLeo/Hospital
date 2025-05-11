@@ -11,11 +11,11 @@
     <children>
         <Label layoutX="25.0" layoutY="29.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Departamento" />
         <VBox layoutX="164.0" layoutY="93.0" prefHeight="200.0" prefWidth="138.0" spacing="20">
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Agregar" />
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Buscar" />
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Listar" />
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Actualizar" />
-            <Button mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Eliminar" />
+            <Button fx:id="Agregar" onAction="#Agregar" mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Agregar" />
+            <Button fx:id="Buscar" onAction="#Buscar"  mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Buscar" />
+            <Button fx:id="Listar" onAction="#Listar"  mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Listar" />
+            <Button fx:id="Actualizar" onAction="#Act"  mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Actualizar" />
+            <Button fx:id="Eliminar" onAction="#Eli" mnemonicParsing="false" prefHeight="37.0" prefWidth="147.0" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Eliminar" />
         </VBox>
         <Button fx:id="regresar" onAction="#regresar" layoutX="188.0" layoutY="391.0" mnemonicParsing="false" styleClass="red-button" text="Regresar" />
         <Label layoutX="25.0" layoutY="7.0" prefHeight="17.0" prefWidth="82.0" text="Bienvenido: ">

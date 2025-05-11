@@ -4,6 +4,7 @@ import com.example.hospital.Model.Dao;
 import com.example.hospital.Model.Paciente;
 
 import java.sql.Connection;
+import java.util.ArrayList;
 
 public class PacienteDao extends Dao<Paciente> {
     public PacienteDao(Connection connection) {
@@ -11,32 +12,29 @@ public class PacienteDao extends Dao<Paciente> {
     }
 
     @Override
-    public void insertar(Paciente paciente) {
-
+    public boolean insertar(Paciente paciente) {
+        return false;
     }
 
     @Override
-    public void eliminar(Paciente paciente) {
-
+    public boolean eliminar(String id) {
+        return false;
     }
 
     @Override
-    public void modificar(Paciente paciente) {
-
+    public boolean modificar(String id) {
+        return false;
     }
 
     @Override
-    public Paciente consultar(Paciente paciente) {
+    public Paciente consultar(String id) {
         return null;
     }
 
     @Override
-    public void listar() {
-
+    public ArrayList<Paciente> listar() {
+        return null;
     }
 
-    @Override
-    public void exitir() {
 
-    }
 }

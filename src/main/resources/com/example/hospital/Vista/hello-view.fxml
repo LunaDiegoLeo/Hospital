@@ -24,7 +24,7 @@
          <Font name="Berlin Sans FB" size="16.0" />
       </font>
    </Label>
-   <TextField fx:id="usuario" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css">
+   <TextField fx:id="usuario" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css" text="Admin">
       <font>
          <Font size="13.0" />
       </font></TextField>
@@ -33,7 +33,7 @@
       <font>
          <Font name="Berlin Sans FB" size="16.0" />
       </font></Label>
-   <PasswordField fx:id="pass" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css">
+   <PasswordField fx:id="pass" prefHeight="25.0" prefWidth="100.0" stylesheets="@../css/textff.css" text="123456">
       <font>
          <Font size="13.0" />
       </font></PasswordField>

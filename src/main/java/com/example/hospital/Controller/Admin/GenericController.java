@@ -1,6 +1,7 @@
 package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Vista.Admin.AdminView;
+import com.example.hospital.Vista.Admin.GenericInsert;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,6 +11,56 @@ public class GenericController {
     private Button regresar;
     @FXML
     private Label usua;
+
+    public String nombre;
+    @FXML
+    public void Agregar() throws Exception {
+        if(nombre.equals("admin")){
+
+            GenericInsert genericInsert= new GenericInsert();
+            genericInsert.mostrar(nombre,usua.getText());
+            regresar.getScene().getWindow().hide();
+        }
+        else if(nombre.equals("paciente")){
+
+         } else if(nombre.equals("doctor")){
+
+         } else if(nombre.equals("enfermero")){
+
+         } else if(nombre.equals("compania")){
+
+         } else if(nombre.equals("laboratorio")){
+
+        } else if(nombre.equals("estudioslab")){
+
+        } else if(nombre.equals("departamento")){
+
+        } else if(nombre.equals("sala")){
+
+        } else if(nombre.equals("intervenciones")){
+
+        } else if(nombre.equals("medicamentos")){}
+    }
+
+    @FXML
+    public void Buscar() {
+
+    }
+
+    @FXML
+    public void Listar() {
+
+    }
+
+    @FXML
+    public void Act() {
+
+    }
+
+    @FXML
+    public void Eli() {
+
+    }
 
     @FXML
     public void regresar() {
@@ -23,7 +74,8 @@ public class GenericController {
         }
     }
 
-    public void setText(String text){
+    public void setText(String text,String nombre){
         usua.setText(text);
+        this.nombre=nombre;
     }
 }

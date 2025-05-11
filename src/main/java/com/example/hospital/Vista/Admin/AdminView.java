@@ -8,7 +8,7 @@ import javafx.scene.Parent;
 public class AdminView {
 
     public void mostrar(String text) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("admin-view.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("admin-se.fxml"));
         Parent root = loader.load();
         AdminController controller = loader.getController();
         controller.setText(text);
