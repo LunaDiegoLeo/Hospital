@@ -2,6 +2,7 @@ package com.example.hospital.Model.Admin;
 
 import com.example.hospital.Model.Dao;
 import com.example.hospital.Model.Paciente;
+import javafx.collections.ObservableList;
 
 import java.sql.Connection;
 import java.util.ArrayList;
@@ -22,7 +23,7 @@ public class PacienteDao extends Dao<Paciente> {
     }
 
     @Override
-    public boolean modificar(String id) {
+    public boolean modificar(Paciente paciente) {
         return false;
     }
 
@@ -32,7 +33,7 @@ public class PacienteDao extends Dao<Paciente> {
     }
 
     @Override
-    public ArrayList<Paciente> listar() {
+    public ObservableList<Paciente> listar() {
         return null;
     }
 

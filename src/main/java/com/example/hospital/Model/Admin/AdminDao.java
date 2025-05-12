@@ -2,12 +2,11 @@ package com.example.hospital.Model.Admin;
 
 import com.example.hospital.Model.Adminis;
 import com.example.hospital.Model.Dao;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 
 import java.security.MessageDigest;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class AdminDao extends Dao<Adminis>{
@@ -34,29 +33,56 @@ public class AdminDao extends Dao<Adminis>{
 
     @Override
     public boolean eliminar(String id) {
+        String sql="DELETE FROM admin WHERE IdAdmin = ?";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setString(1, id);
+            stmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean modificar(String id) {
+    public boolean modificar(Adminis adminis) {
+        String sql="UPDATE admin SET Nombre=? WHERE IdAdmin = ?";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setString(1, adminis.getNombre());
+            stmt.setString(2,adminis.getId());
+            stmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
     public Adminis consultar(String id) {
+        String sql = "SELECT * FROM admin WHERE IdAdmin = ?";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setString(1, id);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()){
+                Adminis adminis = new Adminis(rs.getString("IdAdmin"), rs.getString("Nombre"));
+                return adminis;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 
     @Override
-    public ArrayList<Adminis> listar() {
+    public ObservableList<Adminis> listar() {
         String sql = "SELECT * FROM admin";
-        ArrayList<Adminis> add= new ArrayList<>();
+        ObservableList<Adminis> add= FXCollections.observableArrayList();
         try(PreparedStatement stmt = connection.prepareStatement(sql)){
             ResultSet rs = stmt.executeQuery();
             while(rs.next()){
                 Adminis adminis = new Adminis(rs.getString("IdAdmin"), rs.getString("Nombre"));
                 add.add(adminis);
-
             }
             return add;
         } catch (Exception e){

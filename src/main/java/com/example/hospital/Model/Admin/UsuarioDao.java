@@ -2,6 +2,7 @@ package com.example.hospital.Model.Admin;
 
 import com.example.hospital.Model.Dao;
 import com.example.hospital.Model.Usuario;
+import javafx.collections.ObservableList;
 
 import java.security.MessageDigest;
 import java.sql.Connection;
@@ -42,11 +43,19 @@ public class UsuarioDao extends Dao<Usuario> {
 
     @Override
     public boolean eliminar(String id) {
+        String sql="DELETE FROM usuarios WHERE idExterno = ?";
+        try(PreparedStatement stmt = connection.prepareStatement(sql)){
+            stmt.setString(1, id);
+            stmt.executeUpdate();
+            return true;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         return false;
     }
 
     @Override
-    public boolean modificar(String id) {
+    public boolean modificar(Usuario usuario) {
         return false;
     }
 
@@ -70,7 +79,7 @@ public class UsuarioDao extends Dao<Usuario> {
     }
 
     @Override
-    public ArrayList<Usuario> listar() {
+    public ObservableList<Usuario> listar() {
         return null;
     }
 

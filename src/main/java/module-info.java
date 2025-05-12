@@ -17,4 +17,7 @@ module com.example.hospital {
     opens com.example.hospital.Vista.Admin to javafx.fxml;
     exports com.example.hospital.Controller.Admin;
     opens com.example.hospital.Controller.Admin to javafx.fxml;
+
+    exports com.example.hospital.Model;
+    opens com.example.hospital.Model to javafx.base, javafx.fxml;
 }

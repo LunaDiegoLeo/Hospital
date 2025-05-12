@@ -1,0 +1,60 @@
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #004080; /* Azul oscuro elegante */
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 64, 128, 0.3), 10, 0, 0, 0);
+    -fx-table-cell-border-color: #004080;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #004080;
+    -fx-background-radius: 8 8 0 0;
+}
+
+.table-view .column-header, 
+.table-view .filler {
+    -fx-background-color: transparent;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: white;
+    -fx-text-fill: #004080;
+    -fx-font-size: 13px;
+    -fx-border-color: #004080;
+    -fx-border-width: 0 0 1 0;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: #e6f0ff; /* Azul claro elegante al pasar el mouse */
+}
+
+.table-view .table-row-cell:focused {
+    -fx-background-insets: 0;
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: #ffcccc; /* Rojo claro para selección */
+    -fx-text-fill: #800000; /* Rojo oscuro para el texto seleccionado */
+}
+
+.table-view .table-cell {
+    -fx-alignment: CENTER;
+}
+
+.table-view .scroll-bar:vertical,
+.table-view .scroll-bar:horizontal {
+    -fx-background-color: white;
+}
+
+.table-view .scroll-bar .thumb {
+    -fx-background-color: #004080;
+    -fx-background-radius: 5;
+}

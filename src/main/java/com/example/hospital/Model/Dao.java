@@ -1,5 +1,7 @@
 package com.example.hospital.Model;
 
+import javafx.collections.ObservableList;
+
 import java.sql.Connection;
 import java.util.ArrayList;
 
@@ -12,9 +14,9 @@ public abstract class Dao <T>{
 
     public abstract boolean insertar(T t);
     public abstract boolean eliminar(String id);
-    public abstract boolean modificar(String id);
+    public abstract boolean modificar(T t);
     public abstract T consultar(String id);
-    public abstract ArrayList<T> listar();
+    public abstract ObservableList<T> listar();
 
 
 }

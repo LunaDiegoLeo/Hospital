@@ -1,7 +1,6 @@
 package com.example.hospital.Controller.Admin;
 
-import com.example.hospital.Vista.Admin.AdminView;
-import com.example.hospital.Vista.Admin.GenericInsert;
+import com.example.hospital.Vista.Admin.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -43,23 +42,115 @@ public class GenericController {
     }
 
     @FXML
-    public void Buscar() {
+    public void Buscar() throws Exception {
+        if(nombre.equals("admin")){
+            GenericBuscar genericLi= new GenericBuscar();
+            genericLi.mostrar(nombre,usua.getText());
+            regresar.getScene().getWindow().hide();
+        }
+        else if(nombre.equals("paciente")){
 
+        } else if(nombre.equals("doctor")){
+
+        } else if(nombre.equals("enfermero")){
+
+        } else if(nombre.equals("compania")){
+
+        } else if(nombre.equals("laboratorio")){
+
+        } else if(nombre.equals("estudioslab")){
+
+        } else if(nombre.equals("departamento")){
+
+        } else if(nombre.equals("sala")){
+
+        } else if(nombre.equals("intervenciones")){
+
+        } else if(nombre.equals("medicamentos")){}
     }
 
     @FXML
-    public void Listar() {
+    public void Listar() throws Exception {
+        if(nombre.equals("admin")){
+            GenericListar genericLi= new GenericListar();
+            genericLi.mostrar(nombre,usua.getText());
+            regresar.getScene().getWindow().hide();
+        }
+        else if(nombre.equals("paciente")){
 
+        } else if(nombre.equals("doctor")){
+
+        } else if(nombre.equals("enfermero")){
+
+        } else if(nombre.equals("compania")){
+
+        } else if(nombre.equals("laboratorio")){
+
+        } else if(nombre.equals("estudioslab")){
+
+        } else if(nombre.equals("departamento")){
+
+        } else if(nombre.equals("sala")){
+
+        } else if(nombre.equals("intervenciones")){
+
+        } else if(nombre.equals("medicamentos")){}
     }
 
     @FXML
-    public void Act() {
+    public void Act() throws Exception {
+        if(nombre.equals("admin")){
+            GenericAct genericLi= new GenericAct();
+            genericLi.mostrar(nombre,usua.getText());
+            regresar.getScene().getWindow().hide();
+        }
+        else if(nombre.equals("paciente")){
 
+        } else if(nombre.equals("doctor")){
+
+        } else if(nombre.equals("enfermero")){
+
+        } else if(nombre.equals("compania")){
+
+        } else if(nombre.equals("laboratorio")){
+
+        } else if(nombre.equals("estudioslab")){
+
+        } else if(nombre.equals("departamento")){
+
+        } else if(nombre.equals("sala")){
+
+        } else if(nombre.equals("intervenciones")){
+
+        } else if(nombre.equals("medicamentos")){}
     }
 
     @FXML
-    public void Eli() {
+    public void Eli() throws Exception {
+        if(nombre.equals("admin")){
+            GenericEliminar genericLi= new GenericEliminar();
+            genericLi.mostrar(nombre,usua.getText());
+            regresar.getScene().getWindow().hide();
+        }
+        else if(nombre.equals("paciente")){
 
+        } else if(nombre.equals("doctor")){
+
+        } else if(nombre.equals("enfermero")){
+
+        } else if(nombre.equals("compania")){
+
+        } else if(nombre.equals("laboratorio")){
+
+        } else if(nombre.equals("estudioslab")){
+
+        } else if(nombre.equals("departamento")){
+
+        } else if(nombre.equals("sala")){
+
+        } else if(nombre.equals("intervenciones")){
+
+        } else if(nombre.equals("medicamentos")){}
     }
 
     @FXML
