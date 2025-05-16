@@ -1,4 +1,4 @@
-package com.example.hospital.Model;
+package com.example.hospital.Model.Tablas;
 
 public class Paciente {
     private String idPaciente;

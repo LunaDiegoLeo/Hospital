@@ -1,7 +1,6 @@
-package com.example.hospital.Model.Admin;
+package com.example.hospital.Model.Daos;
 
-import com.example.hospital.Model.Dao;
-import com.example.hospital.Model.Usuario;
+import com.example.hospital.Model.Tablas.Usuario;
 import javafx.collections.ObservableList;
 
 import java.security.MessageDigest;
@@ -9,7 +8,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
-import java.util.ArrayList;
 
 public class UsuarioDao extends Dao<Usuario> {
     public UsuarioDao(Connection connection) {
@@ -32,8 +30,15 @@ public class UsuarioDao extends Dao<Usuario> {
             stmt.setString(2,npas);
             stmt.setString(3,usuario.getIdEx());
             stmt.setInt(4,usuario.getTipo());
-            stmt.executeUpdate();
-            return true;
+
+            Usuario us= consultar(usuario.getUsuario());
+            if(us!=null){
+                return false;
+            } else{
+                stmt.executeUpdate();
+                return true;
+            }
+
         } catch (Exception e){
             e.printStackTrace();
 
@@ -47,7 +52,11 @@ public class UsuarioDao extends Dao<Usuario> {
         try(PreparedStatement stmt = connection.prepareStatement(sql)){
             stmt.setString(1, id);
             stmt.executeUpdate();
-            return true;
+            if(consultar(id)==null){
+                return true;
+            } else{
+                return false;
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }

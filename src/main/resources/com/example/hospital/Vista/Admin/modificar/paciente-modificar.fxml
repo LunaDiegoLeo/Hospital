@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="576.0" prefWidth="675.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.PacienteController">
+    <children>
+        <Label layoutX="26.0" layoutY="28.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Agregar un paciente" />
+        <Label layoutX="26.0" layoutY="169.0" text="Nombre del paciente">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="nombre" disable="true" layoutX="26.0" layoutY="207.0" prefHeight="29.0" prefWidth="286.0" stylesheets="@../../../css/textff.css" />
+        <Button fx:id="agre" disable="true" layoutX="26.0" layoutY="448.0" mnemonicParsing="false" onAction="#modificar" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" stylesheets="@../../../css/boton.css" text="Modificar" />
+        <Button fx:id="reg" layoutX="203.0" layoutY="448.0" mnemonicParsing="false" onAction="#regresar" prefHeight="37.0" prefWidth="107.0" styleClass="red-button" text="Regresar" />
+        <Label layoutX="332.0" layoutY="256.0" text="Sexo">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <SplitMenuButton fx:id="sexo" disable="true" layoutX="332.0" layoutY="296.0" mnemonicParsing="false" text="M">
+            <items>
+                <MenuItem mnemonicParsing="false" text="F" />
+            </items>
+        </SplitMenuButton>
+        <Label layoutX="23.0" layoutY="259.0" text="Telefono">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="telefono" disable="true" layoutX="23.0" layoutY="288.0" prefHeight="29.0" prefWidth="286.0" stylesheets="@../../../css/textff.css" />
+        <Label layoutX="26.0" layoutY="360.0" text="Edad">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="edad" disable="true" layoutX="26.0" layoutY="389.0" prefHeight="29.0" prefWidth="46.0" stylesheets="@../../../css/textff.css" />
+        <Label layoutX="92.0" layoutY="360.0" text="Altura">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="altura" disable="true" layoutX="92.0" layoutY="389.0" prefHeight="29.0" prefWidth="46.0" stylesheets="@../../../css/textff.css" />
+        <Label layoutX="158.0" layoutY="360.0" text="Peso">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <TextField fx:id="peso" disable="true" layoutX="158.0" layoutY="389.0" prefHeight="29.0" prefWidth="46.0" stylesheets="@../../../css/textff.css" />
+        <Label layoutX="449.0" layoutY="360.0" text="Seguro">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <SplitMenuButton fx:id="seguros" disable="true" layoutX="449.0" layoutY="397.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="174.0" text="Seleciona">
+            <items>
+            </items>
+        </SplitMenuButton>
+        <DatePicker fx:id="datapicker" disable="true" layoutX="231.0" layoutY="397.0" />
+        <Label layoutX="231.0" layoutY="357.0" text="Fecha de nacimiento">
+            <font>
+                <Font name="Berlin Sans FB Bold" size="15.0" />
+            </font>
+        </Label>
+        <Button fx:id="buscar" layoutX="357.0" layoutY="118.0" mnemonicParsing="false" onAction="#buscar2" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" stylesheets="@../../../css/boton.css" text="Buscar" />
+        <TextField fx:id="idbus" layoutX="26.0" layoutY="122.0" prefHeight="29.0" prefWidth="286.0" stylesheets="@../../../css/textff.css" />
+      <Label layoutX="26.0" layoutY="97.0" text="ID del paciente">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+    </children>
+    <stylesheets>
+        <URL value="@../../../css/admin-style.css" />
+    </stylesheets>
+</AnchorPane>

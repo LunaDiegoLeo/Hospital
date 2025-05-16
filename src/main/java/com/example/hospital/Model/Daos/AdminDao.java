@@ -1,13 +1,10 @@
-package com.example.hospital.Model.Admin;
+package com.example.hospital.Model.Daos;
 
-import com.example.hospital.Model.Adminis;
-import com.example.hospital.Model.Dao;
+import com.example.hospital.Model.Tablas.Adminis;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-import java.security.MessageDigest;
 import java.sql.*;
-import java.util.ArrayList;
 
 public class AdminDao extends Dao<Adminis>{
     public AdminDao(Connection connection) {

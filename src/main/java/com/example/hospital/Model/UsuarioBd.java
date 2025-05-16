@@ -1,5 +1,7 @@
 package com.example.hospital.Model;
 
+import com.example.hospital.Model.Tablas.Usuario;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

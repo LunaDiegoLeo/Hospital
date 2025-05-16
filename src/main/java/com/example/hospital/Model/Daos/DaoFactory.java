@@ -1,8 +1,4 @@
-package com.example.hospital.Model;
-
-import com.example.hospital.Model.Admin.AdminDao;
-import com.example.hospital.Model.Admin.PacienteDao;
-import com.example.hospital.Model.Admin.UsuarioDao;
+package com.example.hospital.Model.Daos;
 
 import java.sql.Connection;
 
@@ -20,6 +16,11 @@ public enum DaoFactory {
     USUARIO{
         public Dao<?> crear(Connection connection) {
             return new UsuarioDao(connection);
+        }
+    },
+    SEGURO{
+        public Dao<?> crear(Connection connection) {
+            return new SeguroDao(connection);
         }
     };
 

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="566.0" prefWidth="677.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.PacienteController">
+    <children>
+        <Label layoutX="40.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Lista de pacientes" />
+        <TextField fx:id="nombre" layoutX="377.0" layoutY="406.0" prefHeight="21.0" prefWidth="26.0" stylesheets="@../../../css/textff.css" visible="false" />
+        <Button fx:id="agre" layoutX="26.0" layoutY="383.0" mnemonicParsing="false" onAction="#agregar" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" stylesheets="@../../../css/boton.css" text="Agregar" visible="false" />
+        <TextField fx:id="usuario" layoutX="412.0" layoutY="406.0" prefHeight="29.0" prefWidth="15.0" stylesheets="@../../../css/textff.css" visible="false" />
+        <TextField fx:id="pass" layoutX="427.0" layoutY="406.0" prefHeight="23.0" prefWidth="7.0" stylesheets="@../../../css/textff.css" visible="false" />
+        <Button fx:id="reg" layoutX="264.0" layoutY="490.0" mnemonicParsing="false" onAction="#regresar" prefHeight="37.0" prefWidth="150.0" styleClass="red-button" text="Regresar" />
+        <ScrollPane layoutX="40.0" layoutY="95.0" prefHeight="322.0" prefWidth="616.0">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="318.0" prefWidth="588.0">
+                    <children>
+                        <TableView fx:id="tablaAdmin" prefHeight="319.0" prefWidth="615.0">
+                            <columns>
+                                <TableColumn fx:id="idad" prefWidth="111.0" text="Id" />
+                                <TableColumn fx:id="nombread" prefWidth="120.0" text="Nombre" />
+                        <TableColumn fx:id="sexod" prefWidth="84.0" text="Sexo" />
+                        <TableColumn fx:id="telfonod" prefWidth="104.0" text="Telefono" />
+                        <TableColumn fx:id="edadd" prefWidth="75.0" text="Edad" />
+                        <TableColumn fx:id="alturad" prefWidth="75.0" text="Altura" />
+                        <TableColumn fx:id="pesod" prefWidth="75.0" text="Peso" />
+                        <TableColumn fx:id="FechaNacd" prefWidth="75.0" text="Fecha Nac" />
+                        <TableColumn fx:id="curdd" prefWidth="75.0" text="Curp" />
+                        <TableColumn fx:id="segurod" prefWidth="75.0" text="ID seguro" />
+                            </columns>
+                        </TableView>
+                    </children>
+                </AnchorPane>
+            </content>
+        </ScrollPane>
+    </children>
+    <stylesheets>
+        <URL value="@../../../css/admin-style.css" />
+        <URL value="@../../../css/tablas.css" />
+    </stylesheets>
+</AnchorPane>

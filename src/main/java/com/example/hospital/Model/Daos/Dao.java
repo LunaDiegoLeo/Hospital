@@ -1,9 +1,8 @@
-package com.example.hospital.Model;
+package com.example.hospital.Model.Daos;
 
 import javafx.collections.ObservableList;
 
 import java.sql.Connection;
-import java.util.ArrayList;
 
 public abstract class Dao <T>{
     protected Connection connection;

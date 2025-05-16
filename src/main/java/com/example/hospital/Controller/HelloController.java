@@ -1,6 +1,6 @@
 package com.example.hospital.Controller;
 
-import com.example.hospital.Model.Usuario;
+import com.example.hospital.Model.Tablas.Usuario;
 import com.example.hospital.Model.UsuarioBd;
 import com.example.hospital.Vista.Admin.AdminView;
 import javafx.fxml.FXML;
