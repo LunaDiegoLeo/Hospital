@@ -27,11 +27,47 @@ public class TurnoDao extends Dao<Turno> {
 
     @Override
     public Turno consultar(String id) {
+        String query = "SELECT IDTurno, HoraInicio, HoraFin, Descripcion FROM Turno WHERE IDTurno = ?";
+        try (java.sql.PreparedStatement stmt = connection.prepareStatement(query)) {
+            stmt.setInt(1, Integer.parseInt(id));
+            try (java.sql.ResultSet rs = stmt.executeQuery()) {
+                if (rs.next()) {
+                    return new Turno(
+                            rs.getInt("IDTurno"),
+                            rs.getString("HoraInicio"),
+                            rs.getString("HoraFin"),
+                            rs.getString("Descripcion")
+                    );
+                }
+            }
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
         return null;
     }
 
     @Override
     public ObservableList<Turno> listar() {
-        return null;
+        ObservableList<Turno> turnos = javafx.collections.FXCollections.observableArrayList();
+        String query = "SELECT IDTurno, HoraInicio, HoraFin, Descripcion FROM Turno";
+
+        try (java.sql.Statement stmt = connection.createStatement();
+             java.sql.ResultSet rs = stmt.executeQuery(query)) {
+
+            while (rs.next()) {
+                Turno turno = new Turno(
+                        rs.getInt("IDTurno"),
+                        rs.getString("HoraInicio"),
+                        rs.getString("HoraFin"),
+                        rs.getString("Descripcion")
+                );
+                turnos.add(turno);
+            }
+
+        } catch (java.sql.SQLException e) {
+            e.printStackTrace();
+        }
+
+        return turnos;
     }
 }

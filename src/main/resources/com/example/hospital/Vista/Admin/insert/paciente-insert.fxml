@@ -32,9 +32,10 @@
             <Font name="Berlin Sans FB Bold" size="15.0" />
          </font>
       </Label>
-      <SplitMenuButton fx:id="sexo" layoutX="382.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="M">
+      <SplitMenuButton fx:id="sexo" layoutX="382.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Selecciona una opcion">
         <items>
           <MenuItem mnemonicParsing="false" text="F" />
+            <MenuItem mnemonicParsing="false" text="F" />
         </items>
       </SplitMenuButton>
       <Label layoutX="338.0" layoutY="189.0" text="Telefono">

@@ -1,6 +1,7 @@
 package com.example.hospital.Vista.Admin;
 
 import com.example.hospital.Controller.Admin.AdminInsController;
+import com.example.hospital.Controller.Admin.DoctorController;
 import com.example.hospital.Controller.Admin.PacienteController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,6 +18,10 @@ public class GenericAct {
         }
         if (fxml.equals("paciente")){
             PacienteController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
+        if (fxml.equals("doctor")){
+            DoctorController controller = loader.getController();
             controller.setText(text,fxml);
         }
 

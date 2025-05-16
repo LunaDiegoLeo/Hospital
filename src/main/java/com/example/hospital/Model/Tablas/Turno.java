@@ -2,12 +2,12 @@ package com.example.hospital.Model.Tablas;
 
 public class Turno {
     private int idTurno;
-    private int horaInicio;
-    private int horaFin;
+    private String horaInicio;
+    private String horaFin;
     private String descripcion;
 
     // Constructor
-    public Turno(int idTurno, int horaInicio, int horaFin, String descripcion) {
+    public Turno(int idTurno, String horaInicio, String horaFin, String descripcion) {
         this.idTurno = idTurno;
         this.horaInicio = horaInicio;
         this.horaFin = horaFin;
@@ -23,19 +23,19 @@ public class Turno {
         this.idTurno = idTurno;
     }
 
-    public int getHoraInicio() {
+    public String getHoraInicio() {
         return horaInicio;
     }
 
-    public void setHoraInicio(int horaInicio) {
+    public void setHoraInicio(String horaInicio) {
         this.horaInicio = horaInicio;
     }
 
-    public int getHoraFin() {
+    public String getHoraFin() {
         return horaFin;
     }
 
-    public void setHoraFin(int horaFin) {
+    public void setHoraFin(String horaFin) {
         this.horaFin = horaFin;
     }
 
@@ -47,3 +47,4 @@ public class Turno {
         this.descripcion = descripcion;
     }
 }
+
