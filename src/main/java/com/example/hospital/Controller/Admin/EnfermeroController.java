@@ -25,7 +25,6 @@ public class EnfermeroController implements Initializable {
     private DepartamentoDao departamentoDao = (DepartamentoDao) DaoFactory.DEPARTAMENTO.crear(connection);
     private TurnoDao turnoDao = (TurnoDao) DaoFactory.TURNO.crear(connection);
     private EnfermeroDao enfermeroDao = (EnfermeroDao) DaoFactory.ENFERMERO.crear(connection);
-    private EspecialidadDao especialidadDao = (EspecialidadDao) DaoFactory.ESPECIALIDAD.crear(connection);
     private Dao<Usuario> usuariodao = (Dao<Usuario>) DaoFactory.USUARIO.crear(connection);
 
 
@@ -74,7 +73,7 @@ public class EnfermeroController implements Initializable {
     private Button agre;
 
     @FXML
-    private javafx.scene.control.Button reg; // Botón regresar, pedido explícito
+    private javafx.scene.control.Button reg;
 
 
 

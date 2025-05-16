@@ -1,8 +1,8 @@
 package com.example.hospital.Config;
 
 public class Config {
-    private String URL = "jdbc:mysql://localhost:3306/hospitalh";
-    private String USER = "root";
+    private String URL = "";
+    private String USER = "";
     private String PASSWORD = "";
     private static Config instance;
     public String getURL() {
