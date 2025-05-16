@@ -37,6 +37,10 @@ public class GenericListar {
             controller.setText(text,fxml);
             controller.inizializar();
         }
+        if (fxml.equals("estudio")){
+            EstudioController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
 
         Stage stage = new Stage();
         stage.setTitle(fxml);

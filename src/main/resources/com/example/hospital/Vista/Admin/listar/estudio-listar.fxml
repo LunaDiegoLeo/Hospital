@@ -9,13 +9,11 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="464.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.LaboratorioController">
+<AnchorPane prefHeight="464.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.EstudioController">
     <children>
-        <Label layoutX="40.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Lista de los laboratorios" />
+        <Label layoutX="40.0" layoutY="40.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Lista de los estudios" />
         <TextField fx:id="nombre" layoutX="377.0" layoutY="406.0" prefHeight="21.0" prefWidth="26.0" stylesheets="@../../../css/textff.css" visible="false" />
         <Button fx:id="agre" layoutX="26.0" layoutY="383.0" mnemonicParsing="false" onAction="#agregar" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" stylesheets="@../../../css/boton.css" text="Agregar" visible="false" />
-        <TextField fx:id="usuario" layoutX="412.0" layoutY="406.0" prefHeight="29.0" prefWidth="15.0" stylesheets="@../../../css/textff.css" visible="false" />
-        <TextField fx:id="pass" layoutX="427.0" layoutY="406.0" prefHeight="23.0" prefWidth="7.0" stylesheets="@../../../css/textff.css" visible="false" />
         <Button fx:id="reg" layoutX="225.0" layoutY="388.0" mnemonicParsing="false" onAction="#regresar" prefHeight="37.0" prefWidth="150.0" styleClass="red-button" text="Regresar" />
       <ScrollPane layoutX="40.0" layoutY="95.0" prefHeight="255.0" prefWidth="544.0">
         <content>
@@ -24,8 +22,9 @@
                   <TableView fx:id="tablaAdmin" prefHeight="255.0" prefWidth="544.0">
                     <columns>
                       <TableColumn fx:id="idad" prefWidth="120.0" text="Id" />
-                      <TableColumn fx:id="nombread" prefWidth="231.0" text="Descripcion" />
-                        <TableColumn fx:id="pisod" maxWidth="209.0" prefWidth="180.0" text="Piso" />
+                      <TableColumn fx:id="nombread" prefWidth="102.0" text="Descripcion" />
+                        <TableColumn fx:id="costod" maxWidth="309.0" prefWidth="171.0" text="Costo" />
+                        <TableColumn fx:id="haced" prefWidth="140.0" text="Se hace en" />
                     </columns>
                   </TableView>
                </children>

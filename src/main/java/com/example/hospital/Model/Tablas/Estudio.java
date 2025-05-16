@@ -7,8 +7,6 @@ public class Estudio {
     private double costo;
     private String idLaboratorio; // Relación directa con Laboratorio
 
-    // Constructor vacío
-    public Estudio() {}
 
     // Constructor con parámetros
     public Estudio(int idEstudio, String descripcion, double costo, String idLaboratorio) {

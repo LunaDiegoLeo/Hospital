@@ -103,7 +103,7 @@ public class AdminController {
     protected void irEst(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("estudioslab-view.fxml",usua.getText());
+            paciente.mostrar("estudio-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
