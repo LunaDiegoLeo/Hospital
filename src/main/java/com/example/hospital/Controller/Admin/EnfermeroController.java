@@ -17,48 +17,45 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-public class DoctorController implements Initializable {
+public class EnfermeroController implements Initializable {
 
     private String nombre1;
     private String fxml;
     private Connection connection= ConexioBD.getConnection();
     private DepartamentoDao departamentoDao = (DepartamentoDao) DaoFactory.DEPARTAMENTO.crear(connection);
     private TurnoDao turnoDao = (TurnoDao) DaoFactory.TURNO.crear(connection);
-    private DoctorDao doctorDao = (DoctorDao) DaoFactory.DOCTOR.crear(connection);
+    private EnfermeroDao enfermeroDao = (EnfermeroDao) DaoFactory.ENFERMERO.crear(connection);
     private EspecialidadDao especialidadDao = (EspecialidadDao) DaoFactory.ESPECIALIDAD.crear(connection);
     private Dao<Usuario> usuariodao = (Dao<Usuario>) DaoFactory.USUARIO.crear(connection);
 
 
     // --------------------- FX Elements ------------------------
     @FXML
-    private TableView<Doctor> tablaAdmin;
+    private TableView<Enfermero> tablaAdmin;
     @FXML
-    private TableColumn<Doctor, String> idad;
+    private TableColumn<Enfermero, String> idad;
     @FXML
-    private TableColumn<Doctor, String> nombread;
+    private TableColumn<Enfermero, String> nombread;
     @FXML
-    private TableColumn<Doctor, String> telefonod;
+    private TableColumn<Enfermero, String> telefonod;
     @FXML
-    private TableColumn<Doctor, String> curpd;
+    private TableColumn<Enfermero, String> curpd;
     @FXML
-    private TableColumn<Doctor, String> cedulad;
+    private TableColumn<Enfermero, String> cedulad;
     @FXML
-    private TableColumn<Doctor, String> rfcd;
+    private TableColumn<Enfermero, String> rfcd;
+  
     @FXML
-    private TableColumn<Doctor, String> aniod;
-    @FXML
-    private TableColumn<Doctor, String> sueldo;
-    @FXML
-    private TableColumn<Doctor, String> ides;
-    @FXML
-    private TableColumn<Doctor, String> iddep;
-    @FXML
-    private TableColumn<Doctor, String> idturno;
+    private TableColumn<Enfermero, String> sueldo;
     
     @FXML
-    private TextField nombre;
+    private TableColumn<Enfermero, String> iddep;
     @FXML
-    private TextField telefono;
+    private TableColumn<Enfermero, String> idturno;
+
+    @FXML
+    private TextField nombre;
+
     @FXML
     private TextField curp;
     @FXML
@@ -67,10 +64,8 @@ public class DoctorController implements Initializable {
     private TextField rfc;
     @FXML
     private TextField sueldoPorDia;
-    @FXML
-    private TextField aniosExp;
-    @FXML
-    private SplitMenuButton especialidad;
+
+
     @FXML
     private SplitMenuButton departamento;
     @FXML
@@ -81,7 +76,9 @@ public class DoctorController implements Initializable {
     @FXML
     private javafx.scene.control.Button reg; // Botón regresar, pedido explícito
 
-    public DoctorController() throws Exception {
+
+
+    public EnfermeroController() throws Exception {
     }
 
     public void setText(String text, String fxml) {
@@ -98,52 +95,50 @@ public class DoctorController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Campo vacío");
-            alert.setContentText("Por favor, ingresa un ID de doctor.");
+            alert.setContentText("Por favor, ingresa un ID de enfermero.");
             alert.showAndWait();
             return;
         }
 
         try {
-            Doctor doctor = doctorDao.consultar(id);
-            if (doctor != null) {
-                String doctorInfo = String.format(
-                        "ID: %s%nNombre: %s%nTeléfono: %s%nCURP: %s%nCédula: %s%nRFC: %s%nAños de Experiencia: %d%nSueldo: %.2f%nID Especialidad: %d%nID Departamento: %s%nID Turno: %d",
-                        doctor.getIdDoctor(),
-                        doctor.getNombre(),
-                        doctor.getTelefono(),
-                        doctor.getCurp(),
-                        doctor.getCedula(),
-                        doctor.getRfc(),
-                        doctor.getAniosExperiencia(),
-                        doctor.getSueldoPorDia(),
-                        doctor.getIdEspecialidad(),
-                        doctor.getIdDepartamento(),
-                        doctor.getIdTurno()
+            Enfermero enfermero = enfermeroDao.consultar(id);
+            if (enfermero != null) {
+                String enfermeroInfo = String.format(
+                        "ID: %s%nNombre: %s%nCURP: %s%nCédula: %s%nRFC: %s%nSueldo: %.2f%nID Departamento: %s%nID Turno: %d",
+                        enfermero.getIdEnfermero(),
+                        enfermero.getNombre(),
+                        enfermero.getCurp(),
+                        enfermero.getCedula(),
+                        enfermero.getRfc(),
+                        enfermero.getSueldoPorDia(),
+                        enfermero.getIdDepartamento(),
+                        enfermero.getIdTurno()
                 );
 
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Información del Doctor");
-                alert.setHeaderText("Doctor encontrado");
-                alert.setContentText(doctorInfo);
+                alert.setTitle("Información del Enfermero");
+                alert.setHeaderText("Enfermero encontrado");
+                alert.setContentText(enfermeroInfo);
                 alert.showAndWait();
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Doctor no encontrado");
-                alert.setContentText("No se encontró un doctor con el ID especificado: " + id);
+                alert.setHeaderText("Enfermero no encontrado");
+                alert.setContentText("No se encontró un enfermero con el ID especificado: " + id);
                 alert.showAndWait();
             }
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error al buscar el doctor");
-            alert.setContentText("Ha ocurrido un error al intentar buscar el doctor. Por favor, intenta de nuevo.");
+            alert.setHeaderText("Error al buscar el enfermero");
+            alert.setContentText("Ha ocurrido un error al intentar buscar el enfermero. Por favor, intenta de nuevo.");
             alert.showAndWait();
         }
 
     }
-    
+
+
     @FXML
     private void eliminar() {
         String id = idbus.getText().trim();
@@ -151,33 +146,30 @@ public class DoctorController implements Initializable {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Campo vacío");
-            alert.setContentText("Por favor, ingresa un ID de doctor.");
+            alert.setContentText("Por favor, ingresa un ID de enfermero.");
             alert.showAndWait();
             return;
         }
 
         try {
-            Doctor doctor = doctorDao.consultar(id);
-            if (doctor != null) {
-                String doctorInfo = String.format(
-                        "ID: %s%nNombre: %s%nTeléfono: %s%nCURP: %s%nCédula: %s%nRFC: %s%nAños de Experiencia: %d%nSueldo: %.2f%nID Especialidad: %d%nID Departamento: %s%nID Turno: %d",
-                        doctor.getIdDoctor(),
-                        doctor.getNombre(),
-                        doctor.getTelefono(),
-                        doctor.getCurp(),
-                        doctor.getCedula(),
-                        doctor.getRfc(),
-                        doctor.getAniosExperiencia(),
-                        doctor.getSueldoPorDia(),
-                        doctor.getIdEspecialidad(),
-                        doctor.getIdDepartamento(),
-                        doctor.getIdTurno()
+            Enfermero enfermero = enfermeroDao.consultar(id);
+            if (enfermero != null) {
+                String enfermeroInfo = String.format(
+                        "ID: %s%nNombre: %s%nCURP: %s%nCédula: %s%nRFC: %s%nSueldo: %.2f%nID Departamento: %s%nID Turno: %d",
+                        enfermero.getIdEnfermero(),
+                        enfermero.getNombre(),
+                        enfermero.getCurp(),
+                        enfermero.getCedula(),
+                        enfermero.getRfc(),
+                        enfermero.getSueldoPorDia(),
+                        enfermero.getIdDepartamento(),
+                        enfermero.getIdTurno()
                 );
 
                 Alert confirmAlert = new Alert(Alert.AlertType.CONFIRMATION);
                 confirmAlert.setTitle("Confirmación de Eliminación");
-                confirmAlert.setHeaderText("Doctor encontrado");
-                confirmAlert.setContentText(doctorInfo + "\n\n¿Deseas eliminar este doctor?");
+                confirmAlert.setHeaderText("Enfermero encontrado");
+                confirmAlert.setContentText(enfermeroInfo + "\n\n¿Deseas eliminar este enfermero?");
 
                 ButtonType buttonTypeDelete = new ButtonType("Eliminar");
                 ButtonType buttonTypeCancel = new ButtonType("Cancelar", ButtonBar.ButtonData.CANCEL_CLOSE);
@@ -186,19 +178,19 @@ public class DoctorController implements Initializable {
                 confirmAlert.showAndWait().ifPresent(response -> {
                     if (response == buttonTypeDelete) {
                         try {
-                            boolean usu= usuariodao.eliminar(id);
-                            if(doctorDao.eliminar(id)&&usu){
+                            boolean usu = usuariodao.eliminar(id);
+                            if (enfermeroDao.eliminar(id) && usu) {
                                 Alert successAlert = new Alert(Alert.AlertType.INFORMATION);
                                 successAlert.setTitle("Eliminación exitosa");
                                 successAlert.setHeaderText(null);
-                                successAlert.setContentText("El doctor con ID " + id + " ha sido eliminado correctamente.");
+                                successAlert.setContentText("El enfermero con ID " + id + " ha sido eliminado correctamente.");
                                 successAlert.showAndWait();
                                 idbus.clear();
                             } else {
                                 Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                                 errorAlert.setTitle("Error");
                                 errorAlert.setHeaderText("Error al eliminar");
-                                errorAlert.setContentText("El doctor con ID " + id + " no pudo ser eliminado. Por favor, intente nuevamente.");
+                                errorAlert.setContentText("El enfermero con ID " + id + " no pudo ser eliminado. Por favor, intente nuevamente.");
                                 errorAlert.showAndWait();
                             }
 
@@ -206,8 +198,8 @@ public class DoctorController implements Initializable {
                             e.printStackTrace();
                             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
                             errorAlert.setTitle("Error");
-                            errorAlert.setHeaderText("Error al eliminar el doctor");
-                            errorAlert.setContentText("Ha ocurrido un error al intentar eliminar el doctor. Por favor, intenta de nuevo.");
+                            errorAlert.setHeaderText("Error al eliminar el enfermero");
+                            errorAlert.setContentText("Ha ocurrido un error al intentar eliminar el enfermero. Por favor, intenta de nuevo.");
                             errorAlert.showAndWait();
                         }
                     }
@@ -215,16 +207,16 @@ public class DoctorController implements Initializable {
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Doctor no encontrado");
-                alert.setContentText("No se encontró un doctor con el ID especificado: " + id);
+                alert.setHeaderText("Enfermero no encontrado");
+                alert.setContentText("No se encontró un enfermero con el ID especificado: " + id);
                 alert.showAndWait();
             }
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error al buscar el doctor");
-            alert.setContentText("Ha ocurrido un error al intentar buscar el doctor. Por favor, intenta de nuevo.");
+            alert.setHeaderText("Error al buscar el enfermero");
+            alert.setContentText("Ha ocurrido un error al intentar buscar el enfermero. Por favor, intenta de nuevo.");
             alert.showAndWait();
         }
     }
@@ -242,19 +234,15 @@ public class DoctorController implements Initializable {
         }
 
         try {
-            Doctor doctor = doctorDao.consultar(id);
-            if (doctor != null) {
-                nombre.setText(doctor.getNombre());
-                telefono.setText(doctor.getTelefono());
-                curp.setText(doctor.getCurp());
-                cedula.setText(doctor.getCedula());
-                rfc.setText(doctor.getRfc());
-                sueldoPorDia.setText(String.valueOf(doctor.getSueldoPorDia()));
-                aniosExp.setText(String.valueOf(doctor.getAniosExperiencia()));
-                Especialidad especialidad1= especialidadDao.consultar(doctor.getIdEspecialidad()+"");
-                Departamento departamento1= departamentoDao.consultar(doctor.getIdDepartamento());
-                Turno turno1= turnoDao.consultar(doctor.getIdTurno()+"");
-                especialidad.setText(especialidad1.getDescripcion());
+            Enfermero enfermero = enfermeroDao.consultar(id);
+            if (enfermero != null) {
+                nombre.setText(enfermero.getNombre());
+                curp.setText(enfermero.getCurp());
+                cedula.setText(enfermero.getCedula());
+                rfc.setText(enfermero.getRfc());
+                sueldoPorDia.setText(String.valueOf(enfermero.getSueldoPorDia()));
+                Departamento departamento1 = departamentoDao.consultar(enfermero.getIdDepartamento());
+                Turno turno1 = turnoDao.consultar(enfermero.getIdTurno() + "");
                 departamento.setText(departamento1.getDescripcion());
                 turno.setText(turno1.getDescripcion());
 
@@ -264,10 +252,7 @@ public class DoctorController implements Initializable {
                 rfc.setDisable(true);
 
                 nombre.setDisable(false);
-                telefono.setDisable(false);
                 sueldoPorDia.setDisable(false);
-                aniosExp.setDisable(false);
-                especialidad.setDisable(false);
                 departamento.setDisable(false);
                 turno.setDisable(false);
 
@@ -276,8 +261,8 @@ public class DoctorController implements Initializable {
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
-                alert.setHeaderText("Doctor no encontrado");
-                alert.setContentText("No se encontró un doctor con el ID especificado: " + id);
+                alert.setHeaderText("Enfermero no encontrado");
+                alert.setContentText("No se encontró un enfermero con el ID especificado: " + id);
                 alert.showAndWait();
             }
         } catch (Exception e) {
@@ -294,17 +279,13 @@ public class DoctorController implements Initializable {
     @FXML
     private void modificar() {
         try {
-            String idDoctor = idbus.getText().trim();
+            String idEnfermero = idbus.getText().trim();
             String nombreText = nombre.getText().trim();
-            String telefonoText = telefono.getText().trim();
             String sueldoText = sueldoPorDia.getText().trim();
-            String aniosExpText = aniosExp.getText().trim();
-            String especialidadText = especialidad.getText();
             String departamentoText = departamento.getText();
             String turnoText = turno.getText();
 
-            if (idDoctor.isEmpty() || nombreText.isEmpty() || telefonoText.isEmpty() || sueldoText.isEmpty() || aniosExpText.isEmpty() ||
-                    especialidadText == null || departamentoText == null || turnoText == null) {
+            if (idEnfermero.isEmpty() || nombreText.isEmpty() || sueldoText.isEmpty() || departamentoText == null || turnoText == null) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Campos vacíos");
@@ -314,77 +295,60 @@ public class DoctorController implements Initializable {
             }
 
             double sueldo = Double.parseDouble(sueldoText);
-            int anios = Integer.parseInt(aniosExpText);
-            int idEspecialidad = buscarIdEspecialidadPorDescripcion(especialidadText);
+
             String idDepartamento = buscarIdDepartamentoPorDescripcion(departamentoText);
             int idTurno = buscarIdTurnoPorDescripcion(turnoText);
 
-            Doctor doctor = new Doctor(
-                    idDoctor,
-                    nombreText,
-                    telefonoText,
-                    curp.getText(),
-                    cedula.getText(),
-                    rfc.getText(),
-                    anios,
-                    sueldo,
-                    idEspecialidad,
-                    idDepartamento,
-                    idTurno
-            );
+            // Create an Enfermero object and attempt the update
+            Enfermero enfermero = new Enfermero(idEnfermero, nombreText, curp.getText(), cedula.getText(), rfc.getText(), sueldo, idTurno, idDepartamento);
+            boolean updated = enfermeroDao.modificar(enfermero);
 
-            if (doctorDao.modificar(doctor)) {
+            if (updated) {
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Éxito");
                 alert.setHeaderText(null);
-                alert.setContentText("Doctor actualizado correctamente.");
+                alert.setContentText("Enfermero actualizado correctamente.");
                 alert.showAndWait();
 
                 // Re-enable fields, clear inputs, and refresh table
                 idbus.setDisable(false);
                 nombre.setDisable(true);
-                telefono.setDisable(true);
                 sueldoPorDia.setDisable(true);
-                aniosExp.setDisable(true);
-                especialidad.setDisable(true);
+
                 departamento.setDisable(true);
                 turno.setDisable(true);
                 idbus.clear();
                 nombre.clear();
-                telefono.clear();
                 sueldoPorDia.clear();
-                aniosExp.clear();
-                especialidad.setText("Especialidad");
+
                 departamento.setText("Departamento");
                 turno.setText("Turno");
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Actualización fallida");
-                alert.setContentText("No se pudo actualizar el registro del doctor.");
+                alert.setContentText("No se pudo actualizar el registro del enfermero.");
                 alert.showAndWait();
             }
         } catch (NumberFormatException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Entrada no válida");
-            alert.setContentText("Sueldo y años de experiencia deben ser valores numéricos.");
+            alert.setContentText("Sueldo debe ser un valor numérico válido.");
             alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Error inesperado");
-            alert.setContentText("Ha ocurrido un error al intentar modificar el doctor.");
+            alert.setContentText("Ha ocurrido un error al intentar modificar el enfermero.");
             alert.showAndWait();
         }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        if (especialidad != null){
-            cargarEspecialidades();
-        }
+
         if (departamento != null){
             cargarDepartamentos();
         }
@@ -399,20 +363,17 @@ public class DoctorController implements Initializable {
 
 
     private void configurarTabla() {
-        idad.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("idDoctor"));
+        idad.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("idEnfermero"));
         nombread.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("nombre"));
-        telefonod.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("telefono"));
         curpd.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("curp"));
         cedulad.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("cedula"));
         rfcd.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("rfc"));
-        aniod.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("aniosExperiencia"));
         sueldo.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("sueldoPorDia"));
-        ides.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("idEspecialidad"));
         iddep.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("idDepartamento"));
         idturno.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("idTurno"));
     }
     private void listarDoctoresEnTabla() {
-        ObservableList<Doctor> lista = doctorDao.listar();
+        ObservableList<Enfermero> lista = enfermeroDao.listar();
         tablaAdmin.setItems(lista);
     }
 
@@ -422,85 +383,64 @@ public class DoctorController implements Initializable {
     protected void agregar() {
         try {
             String nombreText = nombre.getText().trim();
-            String telefonoText = telefono.getText().trim();
             String curpText = curp.getText().trim();
             String cedulaText = cedula.getText().trim();
             String rfcText = rfc.getText().trim();
             String sueldoText = sueldoPorDia.getText().trim();
-            String aniosExpText = aniosExp.getText().trim();
 
-            String especialidadText = especialidad.getText();
             String departamentoText = departamento.getText();
             String turnoText = turno.getText();
 
-            if (nombreText.isEmpty() || telefonoText.isEmpty() || curpText.isEmpty() || cedulaText.isEmpty() || rfcText.isEmpty()
-                    || sueldoText.isEmpty() || aniosExpText.isEmpty()
-                    || especialidadText == null || departamentoText == null || turnoText == null) {
+            if (nombreText.isEmpty() || curpText.isEmpty() || cedulaText.isEmpty() || rfcText.isEmpty()
+                    || sueldoText.isEmpty() || departamentoText == null || turnoText == null) {
                 System.out.println("Debes llenar todos los campos");
                 return;
             }
 
             double sueldo = Double.parseDouble(sueldoText);
-            int anios = Integer.parseInt(aniosExpText);
 
             // Buscar IDs por nombres seleccionados en los SplitMenuButton
-            int idEspecialidad = buscarIdEspecialidadPorDescripcion(especialidadText);
             String idDepartamento = buscarIdDepartamentoPorDescripcion(departamentoText);
             int idTurno = buscarIdTurnoPorDescripcion(turnoText);
 
             // Generar el nuevo ID del doctor
-            String nuevoIdDoctor = generarNuevoIdDoctor();
+            String nuevoIdEnfermero = generarNuevoIdEnfermero();
 
             // Crear objeto Doctor completo
-            Doctor doctor = new Doctor(
-                    nuevoIdDoctor,
-                    nombreText,
-                    telefonoText,
-                    curpText,
-                    cedulaText,
-                    rfcText,
-                    anios,
-                    sueldo,
-                    idEspecialidad,
-                    idDepartamento,
-                    idTurno
-            );
+            Enfermero enfermero = new Enfermero(nuevoIdEnfermero, nombreText, curpText, cedulaText, rfcText, sueldo, idTurno, idDepartamento);
 
             // Insertar el doctor
-            Usuario usuario = new Usuario(rfcText,rfcText+"/*/*",nuevoIdDoctor,3);
+            Usuario usuario = new Usuario(rfcText,rfcText+"/*/*",nuevoIdEnfermero,3);
             boolean usu= usuariodao.insertar(usuario);
-            if (doctorDao.insertar(doctor) && usu) {
-                javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+            if (enfermeroDao.insertar(enfermero)&&usu) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
                 alert.setTitle("Información");
                 alert.setHeaderText("Éxito");
-                alert.setContentText("Doctor agregado correctamente con ID: " + nuevoIdDoctor);
+                alert.setContentText("Enfermero agregado correctamente con ID: " + nuevoIdEnfermero);
                 alert.showAndWait();
 
                 // Clear input fields after successful addition
                 nombre.clear();
-                telefono.clear();
                 curp.clear();
                 cedula.clear();
                 rfc.clear();
                 sueldoPorDia.clear();
-                aniosExp.clear();
-                especialidad.setText("Especialidad");
                 departamento.setText("Departamento");
                 turno.setText("Turno");
             } else {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setTitle("Error");
                 alert.setHeaderText("Error al agregar el doctor");
-                alert.setContentText("No se pudo agregar el doctor. Por favor, verifica los datos e intenta nuevamente.");
+                alert.setContentText("No se pudo agregar el enfemero. Por favor, verifica los datos e intenta nuevamente.");
                 alert.showAndWait();
             }
 
 
         } catch (NumberFormatException nfe) {
-            javafx.scene.control.Alert alert = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
             alert.setHeaderText("Entrada no válida");
-            alert.setContentText("Sueldo por día y años de experiencia deben ser valores numéricos válidos");
+            alert.setContentText("Sueldo por día debe ser valores numéricos válidos");
             alert.showAndWait();
         } catch (Exception e) {
             e.printStackTrace();
@@ -558,14 +498,14 @@ public class DoctorController implements Initializable {
         throw new RuntimeException("Turno no encontrado: " + descripcion);
     }
 
-    private String generarNuevoIdDoctor() {
-        String nuevoId = "DOC00001";
+    private String generarNuevoIdEnfermero() {
+        String nuevoId = "ENF0000001";
         try (Statement stmt = connection.createStatement();
-             ResultSet rs = stmt.executeQuery("SELECT idDoctor FROM doctor ORDER BY idDoctor DESC LIMIT 1")) {
+             ResultSet rs = stmt.executeQuery("SELECT idEnfermero FROM enfermero ORDER BY idEnfermero DESC LIMIT 1")) {
             if (rs.next()) {
                 String ultimoId = rs.getString("idDoctor");
                 int num = Integer.parseInt(ultimoId.substring(3)) + 1;
-                nuevoId = String.format("DOC%05d", num);
+                nuevoId = String.format("ENF%07d", num);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -588,17 +528,7 @@ public class DoctorController implements Initializable {
     // --------------------- Inicialización ------------------------
 
 
-    private void cargarEspecialidades() {
-        ObservableList<Especialidad> especialidades = especialidadDao.listar();
-        if (!especialidades.isEmpty()) {
-            especialidad.getItems().clear();
-            especialidades.forEach(e -> {
-                javafx.scene.control.MenuItem item = new javafx.scene.control.MenuItem(e.getDescripcion());
-                item.setOnAction(ev -> especialidad.setText(e.getDescripcion()));
-                especialidad.getItems().add(item);
-            });
-        }
-    }
+
 
     private void cargarDepartamentos() {
         ObservableList<Departamento> departamentos = departamentoDao.listar();

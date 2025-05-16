@@ -30,9 +30,9 @@ public class DoctorDao extends Dao<Doctor> {
 
             return preparedStatement.executeUpdate() > 0;
         } catch (Exception e) {
-            e.printStackTrace();
+           return false;
         }
-        return false;
+
     }
 
     @Override
