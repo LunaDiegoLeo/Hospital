@@ -1,9 +1,6 @@
 package com.example.hospital.Vista.Admin;
 
-import com.example.hospital.Controller.Admin.AdminInsController;
-import com.example.hospital.Controller.Admin.DoctorController;
-import com.example.hospital.Controller.Admin.EnfermeroController;
-import com.example.hospital.Controller.Admin.PacienteController;
+import com.example.hospital.Controller.Admin.*;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -27,6 +24,10 @@ public class GenericEliminar {
         }
         if (fxml.equals("enfermero")){
             EnfermeroController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
+        if (fxml.equals("compania")){
+            CompaniaController controller = loader.getController();
             controller.setText(text,fxml);
         }
 

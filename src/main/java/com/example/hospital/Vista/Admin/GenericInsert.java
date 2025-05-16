@@ -26,6 +26,10 @@ public class GenericInsert {
             EnfermeroController controller = loader.getController();
             controller.setText(text,fxml);
         }
+        if (fxml.equals("compania")){
+            CompaniaController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
 
         Stage stage = new Stage();
         stage.setTitle(fxml);

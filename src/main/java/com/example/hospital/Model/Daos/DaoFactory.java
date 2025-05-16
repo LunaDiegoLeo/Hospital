@@ -47,6 +47,11 @@ public enum DaoFactory {
         public Dao<?> crear(Connection connection) {
             return new EnfermeroDao(connection);
         }
+    },
+    COMPANIA{
+        public Dao<?> crear(Connection connection) {
+            return new CompaniaDao(connection);
+        }
     };
 
     public abstract Dao<?> crear(Connection connection);
