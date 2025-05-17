@@ -67,6 +67,16 @@ public enum DaoFactory {
         public Dao<?> crear(Connection connection) {
             return new HaceDao(connection);
         }
+    },
+    SALA{
+        public Dao<?> crear(Connection connection) {
+            return new SalaDao(connection);
+        }
+    },
+    TIPOSALA{
+        public Dao<?> crear(Connection connection) {
+            return new TipoSalaDao(connection);
+        }
     };
 
     public abstract Dao<?> crear(Connection connection);

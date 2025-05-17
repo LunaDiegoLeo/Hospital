@@ -42,6 +42,10 @@ public class GenericInsert {
             DepartamentoController controller = loader.getController();
             controller.setText(text,fxml);
         }
+        if (fxml.equals("sala")){
+            SalaController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
 
         Stage stage = new Stage();
         stage.setTitle(fxml);
