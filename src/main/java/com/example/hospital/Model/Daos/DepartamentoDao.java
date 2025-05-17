@@ -12,17 +12,45 @@ public class DepartamentoDao extends Dao<Departamento> {
 
     @Override
     public boolean insertar(Departamento departamento) {
-        return false;
+        String sql = "INSERT INTO Departamento (IDDepartamento, Descripcion, Piso) VALUES (?, ?, ?)";
+        try (var preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, departamento.getIdDepartamento());
+            preparedStatement.setString(2, departamento.getDescripcion());
+            preparedStatement.setInt(3, departamento.getPiso());
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public boolean eliminar(String id) {
-        return false;
+        String sql = "DELETE FROM Departamento WHERE IDDepartamento = ?";
+        try (var preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, id);
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override
     public boolean modificar(Departamento departamento) {
-        return false;
+        String sql = "UPDATE Departamento SET Descripcion = ?, Piso = ? WHERE IDDepartamento = ?";
+        try (var preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, departamento.getDescripcion());
+            preparedStatement.setInt(2, departamento.getPiso());
+            preparedStatement.setString(3, departamento.getIdDepartamento());
+            int rowsAffected = preparedStatement.executeUpdate();
+            return rowsAffected > 0;
+        } catch (Exception e) {
+            e.printStackTrace();
+            return false;
+        }
     }
 
     @Override

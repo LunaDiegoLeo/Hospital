@@ -38,6 +38,10 @@ public class GenericAct {
             EstudioController controller = loader.getController();
             controller.setText(text,fxml);
         }
+        if (fxml.equals("departamento")){
+            DepartamentoController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
 
         Stage stage = new Stage();
         stage.setTitle(fxml);
