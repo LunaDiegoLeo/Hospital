@@ -28,7 +28,6 @@
          <Button fx:id="sala" onAction="#irSala" prefWidth="200" styleClass="blue-button" text="Sala" />
          <Button fx:id="inter" mnemonicParsing="false" onAction="#irInter" prefHeight="37.0" prefWidth="200.0" styleClass="blue-button" text="Intervenciones" />
          <Button fx:id="medi" onAction="#irMedi" prefWidth="200" styleClass="blue-button" text="Mediamentos" />
-         <Button fx:id="prese" onAction="#irPrese" prefWidth="200.0" styleClass="blue-button" text="Presentacion" />
       </children>
    </VBox>
    <VBox layoutX="200.0" layoutY="525.0" prefHeight="68.0" prefWidth="200.0">

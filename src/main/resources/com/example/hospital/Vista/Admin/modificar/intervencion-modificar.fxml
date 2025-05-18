@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="479.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.IntervencionController">
+   <children>
+      <Label layoutX="27.0" layoutY="14.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Modificar una intervención" />
+      <Button fx:id="agre" layoutX="27.0" layoutY="389.0" mnemonicParsing="false" onAction="#modificar" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" stylesheets="@../../../css/boton.css" text="Buscar" />
+      <Label layoutX="28.0" layoutY="298.0" text="Sala">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <Button fx:id="reg" layoutX="193.0" layoutY="389.0" mnemonicParsing="false" onAction="#regresar" prefHeight="37.0" prefWidth="107.0" styleClass="red-button" text="Regresar" />
+      <SplitMenuButton fx:id="tipos" disable="true" layoutX="27.0" layoutY="330.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="207.0" text="Selecciona">
+         <items>
+
+
+         </items>
+      </SplitMenuButton>
+      <TextField fx:id="nombre" disable="true" layoutX="27.0" layoutY="181.0" prefHeight="29.0" prefWidth="207.0" stylesheets="@../../../css/textff.css" />
+      <Label layoutX="28.0" layoutY="160.0" text="Nombre">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="desc" disable="true" layoutX="27.0" layoutY="259.0" prefHeight="29.0" prefWidth="207.0" stylesheets="@../../../css/textff.css" />
+      <Label layoutX="31.0" layoutY="73.0" text="ID del intervencion">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idbus" layoutX="27.0" layoutY="101.0" prefHeight="29.0" prefWidth="286.0" stylesheets="@../../../css/textff.css" />
+      <Label layoutX="28.0" layoutY="238.0" text="Descripcion">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+   </children>
+   <stylesheets>
+      <URL value="@../../../css/admin-style.css" />
+   </stylesheets>
+</AnchorPane>

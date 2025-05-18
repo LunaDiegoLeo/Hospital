@@ -139,7 +139,7 @@ public class AdminController {
     protected void irInter(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("intervenciones-view.fxml",usua.getText());
+            paciente.mostrar("intervencion-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
