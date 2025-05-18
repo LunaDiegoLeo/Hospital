@@ -151,7 +151,7 @@ public class AdminController {
     protected void irMedi(){
         try{
             GenericView paciente= new GenericView();
-            paciente.mostrar("medicamentos-view.fxml",usua.getText());
+            paciente.mostrar("medicamento-view.fxml",usua.getText());
 
             pac.getScene().getWindow().hide();
         }catch (Exception e) {
@@ -159,17 +159,7 @@ public class AdminController {
         }
     }
 
-    @FXML
-    protected void irPrese(){
-        try{
-            GenericView paciente= new GenericView();
-            paciente.mostrar("presentacion-view.fxml",usua.getText());
 
-            pac.getScene().getWindow().hide();
-        }catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
 
     @FXML
     protected void cerrar(){

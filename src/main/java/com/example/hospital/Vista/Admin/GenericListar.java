@@ -54,6 +54,10 @@ public class GenericListar {
             IntervencionController controller = loader.getController();
             controller.setText(text,fxml);
         }
+        if (fxml.equals("medicamento")){
+            MedicamentoController controller = loader.getController();
+            controller.setText(text,fxml);
+        }
 
         Stage stage = new Stage();
         stage.setTitle(fxml);

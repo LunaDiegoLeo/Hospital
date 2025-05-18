@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import java.net.URL?>
+
+<AnchorPane prefHeight="460.0" prefWidth="600.0" style="-fx-background-color: #FFFFFF;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Admin.MedicamentoController">
+   <children>
+      <Label layoutX="40.0" layoutY="30.0" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Agregar nuevo medicamento" />
+
+      <Label layoutX="26.0" layoutY="85.0" text="Nombre">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nombre" layoutX="27.0" layoutY="110.0" prefWidth="300.0"/>
+
+      <Label layoutX="26.0" layoutY="155.0" text="Descripción">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="descripcion" layoutX="27.0" layoutY="180.0" prefWidth="300.0"/>
+
+      <Label layoutX="26.0" layoutY="230.0" text="Cantidad">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="cantidad" layoutX="27.0" layoutY="255.0" prefWidth="140.0"/>
+
+      <Label layoutX="190.0" layoutY="230.0" text="Costo">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="costo" layoutX="190.0" layoutY="255.0" prefWidth="140.0"/>
+
+      <Label layoutX="26.0" layoutY="300.0" text="Presentación">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <SplitMenuButton fx:id="presentaciones" layoutX="27.0" layoutY="325.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" text="Selecciona una presentación"/>
+
+      <Label layoutX="26.0" layoutY="370.0" text="Tipo de Medicamento">
+         <font>
+            <Font name="Berlin Sans FB Bold" size="15.0" />
+         </font>
+      </Label>
+      <SplitMenuButton fx:id="tipos" layoutX="27.0" layoutY="395.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="300.0" text="Selecciona un tipo"/>
+
+      <Button fx:id="agre" layoutX="27.0" layoutY="435.0" mnemonicParsing="false" onAction="#agregar" prefHeight="36.0" prefWidth="132.0" styleClass="blue-button" text="Agregar" />
+      <Button fx:id="reg" layoutX="180.0" layoutY="435.0" mnemonicParsing="false" onAction="#regresar" prefHeight="36.0" prefWidth="132.0" styleClass="red-button" text="Regresar" />
+   </children>
+   <stylesheets>
+      <URL value="@../../../css/admin-style.css" />
+   </stylesheets>
+</AnchorPane>

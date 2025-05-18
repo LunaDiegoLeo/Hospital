@@ -11,7 +11,7 @@ public class ConexioBD {
     private static final String USER = "root";
     private static final String PASSWORD = "";
     private static Config config;
-    private static Connection connection;
+    public static Connection connection;
 
     public static Connection getConnection() throws Exception {
         config = Config.getIntance(URL, USER, PASSWORD);
