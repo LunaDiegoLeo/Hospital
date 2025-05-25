@@ -1,11 +1,10 @@
 package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Model.ConexioBD;
-import com.example.hospital.Model.Daos.DaoFactory;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Daos.EstudioDao;
 import com.example.hospital.Model.Daos.HaceDao;
 import com.example.hospital.Model.Daos.LaboratorioDao;
-import com.example.hospital.Model.Tablas.Adminis;
 import com.example.hospital.Model.Tablas.Estudio;
 import com.example.hospital.Model.Tablas.Hace;
 import com.example.hospital.Model.Tablas.Laboratorio;

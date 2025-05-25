@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="410.0" prefWidth="600.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Paciente.CitasController">
+
+    <!-- Título superior -->
+    <Label layoutX="30" layoutY="30" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Citas" />
+
+    <!-- Área central de botones -->
+    <VBox layoutX="200.0" layoutY="101.0" spacing="20">
+        <Button fx:id="admin" onAction="#agendar" prefWidth="200" styleClass="blue-button" text="Agendar cita" />
+        <Button fx:id="pac" onAction="#modificar" prefWidth="200" styleClass="blue-button" text="Modificar cita" />
+        <Button fx:id="doc" onAction="#vercitas" prefWidth="200" styleClass="blue-button" text="Ver citas" />
+    </VBox>
+    <VBox layoutX="200.0" layoutY="312.0" prefHeight="68.0" prefWidth="200.0">
+        <children>
+            <Button fx:id="reg" mnemonicParsing="false" onAction="#regresar" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Regresar" />
+        </children>
+    </VBox>
+    <Label fx:id="usua" layoutX="118.0" layoutY="7.0" text="     ">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+
+    <!-- Estilos inline -->
+    <stylesheets>
+        <URL value="@../../css/admin-style.css" />
+    </stylesheets>
+</AnchorPane>

@@ -34,8 +34,8 @@
       </Label>
       <SplitMenuButton fx:id="sexo" layoutX="382.0" layoutY="134.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="72.0" text="Selecciona una opcion">
         <items>
-          <MenuItem mnemonicParsing="false" text="F" />
-            <MenuItem mnemonicParsing="false" text="F" />
+          <MenuItem fx:id="sexof" mnemonicParsing="false" text="F" />
+            <MenuItem fx:id="sexom" mnemonicParsing="false" text="M" />
         </items>
       </SplitMenuButton>
       <Label layoutX="338.0" layoutY="189.0" text="Telefono">

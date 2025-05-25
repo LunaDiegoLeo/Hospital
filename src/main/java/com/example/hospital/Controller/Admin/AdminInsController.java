@@ -2,7 +2,7 @@ package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Model.*;
 import com.example.hospital.Model.Daos.Dao;
-import com.example.hospital.Model.Daos.DaoFactory;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Tablas.Adminis;
 import com.example.hospital.Model.Tablas.Usuario;
 import com.example.hospital.Vista.Admin.GenericView;

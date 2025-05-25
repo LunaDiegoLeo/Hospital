@@ -2,9 +2,7 @@ package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Model.ConexioBD;
 import com.example.hospital.Model.Daos.Dao;
-import com.example.hospital.Model.Daos.DaoFactory;
-import com.example.hospital.Model.Daos.UsuarioDao;
-import com.example.hospital.Model.Tablas.Adminis;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Tablas.Paciente;
 import com.example.hospital.Model.Tablas.Seguro;
 import com.example.hospital.Model.Tablas.Usuario;
@@ -24,6 +22,10 @@ public class PacienteController {
     private Dao<Usuario> usuariodao = (Dao<Usuario>) DaoFactory.USUARIO.crear(connection);
     private Dao<Seguro> seguroDao = (Dao<Seguro>) DaoFactory.SEGURO.crear(connection);
 
+    @FXML
+    private MenuItem sexof;
+    @FXML
+    private MenuItem sexom;
 
     @FXML
     private TextField nombre;
@@ -194,6 +196,13 @@ public class PacienteController {
 
     @FXML
     public void initialize() {
+        if(sexof!=null){
+            sexof.setOnAction(e -> sexo.setText("F"));
+        }
+        if(sexom!=null){
+            sexom.setOnAction(e -> sexo.setText("M"));
+        }
+
         if (tablaAdmin != null) {
             // Configurar columnas
             idad.setCellValueFactory(new PropertyValueFactory<>("idPaciente"));

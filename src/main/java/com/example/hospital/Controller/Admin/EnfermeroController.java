@@ -2,10 +2,10 @@ package com.example.hospital.Controller.Admin;
 
 
 import com.example.hospital.Model.ConexioBD;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Daos.*;
 import com.example.hospital.Model.Tablas.*;
 import com.example.hospital.Vista.Admin.GenericView;
-import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

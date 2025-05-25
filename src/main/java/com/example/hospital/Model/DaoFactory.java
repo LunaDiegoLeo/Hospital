@@ -1,4 +1,6 @@
-package com.example.hospital.Model.Daos;
+package com.example.hospital.Model;
+
+import com.example.hospital.Model.Daos.*;
 
 import java.sql.Connection;
 
@@ -102,6 +104,12 @@ public enum DaoFactory {
         public Dao<?> crear(Connection connection) {
             return new TipoMedicamentoDao(connection);
         }
+    },
+    CITA{
+        public Dao<?> crear(Connection connection) {
+            return new CitaMedicaDao(connection);
+        }
+
     };
 
     public abstract Dao<?> crear(Connection connection);

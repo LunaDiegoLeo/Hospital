@@ -14,15 +14,18 @@ public class ConexioBD {
     public static Connection connection;
 
     public static Connection getConnection() throws Exception {
-        config = Config.getIntance(URL, USER, PASSWORD);
-        if(config!=null){
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection= DriverManager.getConnection(config.getURL(), config.getUser(), config.getPassword());
-        } else{
-            throw new Exception("Error al conectar con la base de datos");
+        if (connection == null || connection.isClosed()) {
+            config = Config.getIntance(URL, USER, PASSWORD);
+            if (config != null) {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                connection = DriverManager.getConnection(config.getURL(), config.getUser(), config.getPassword());
+            } else {
+                throw new Exception("Error al conectar con la base de datos");
+            }
         }
         return connection;
     }
+
 
     public static void closeConnection() {
         if (connection != null) {

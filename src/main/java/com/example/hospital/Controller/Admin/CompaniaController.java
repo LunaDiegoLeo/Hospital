@@ -2,12 +2,9 @@ package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Model.*;
 import com.example.hospital.Model.Daos.Dao;
-import com.example.hospital.Model.Daos.DaoFactory;
-import com.example.hospital.Model.Tablas.Adminis;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Tablas.Compania;
-import com.example.hospital.Model.Tablas.Usuario;
 import com.example.hospital.Vista.Admin.GenericView;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;

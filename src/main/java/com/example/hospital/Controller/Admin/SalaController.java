@@ -1,6 +1,7 @@
 package com.example.hospital.Controller.Admin;
 
 import com.example.hospital.Model.ConexioBD;
+import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Daos.*;
 import com.example.hospital.Model.Tablas.Departamento;
 import com.example.hospital.Model.Tablas.Sala;
