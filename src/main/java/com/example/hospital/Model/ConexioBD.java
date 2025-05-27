@@ -2,21 +2,34 @@ package com.example.hospital.Model;
 
 import com.example.hospital.Config.Config;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.Reader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConexioBD {
-    private static final String URL = "jdbc:mysql://localhost:3306/hospitalh";
-    private static final String USER = "root";
-    private static final String PASSWORD = "";
+    private static String URL = "";
+    private static String USER = "";
+    private static String PASSWORD = "";
     private static Config config;
     public static Connection connection;
 
     public static Connection getConnection() throws Exception {
         if (connection == null || connection.isClosed()) {
-            config = Config.getIntance(URL, USER, PASSWORD);
+            Reader fr;
+            BufferedReader br;
+            fr = new FileReader("C:\\Users\\Sistemas\\Documents\\git\\Hospital\\src\\main\\java\\com\\example\\hospital\\Config\\Bd.txt");
+            br = new BufferedReader(fr);
+            URL=br.readLine();
+            USER=br.readLine();
+            PASSWORD=br.readLine();
+            config = Config.getIntance();
             if (config != null) {
+                config.setURL(URL);
+                config.setUser(USER);
+                config.setPassword(PASSWORD);
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 connection = DriverManager.getConnection(config.getURL(), config.getUser(), config.getPassword());
             } else {

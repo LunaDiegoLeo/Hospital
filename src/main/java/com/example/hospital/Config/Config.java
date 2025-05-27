@@ -1,9 +1,9 @@
 package com.example.hospital.Config;
 
 public class Config {
-    private String URL = "";
-    private String USER = "";
-    private String PASSWORD = "";
+    private String URL;
+    private String USER;
+    private String PASSWORD;
     private static Config instance;
     public String getURL() {
         return URL;
@@ -25,14 +25,14 @@ public class Config {
     }
 
 
-    private Config(String url, String user, String password) {
-        this.URL = url;
-        this.USER = user;
-        this.PASSWORD = password;
+    private Config() {
+        this.URL = "";
+        this.USER = "";
+        this.PASSWORD ="";
     }
-    public static Config getIntance(String url, String user, String password) {
+    public static Config getIntance() {
         if(instance == null) {
-            instance = new Config(url, user, password);
+            instance = new Config();
             return instance;
         }
         return instance;
