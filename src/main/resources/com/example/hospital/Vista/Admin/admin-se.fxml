@@ -45,6 +45,7 @@
          <Font name="Arial Bold" size="13.0" />
       </font>
    </Label>
+    <Button fx:id="cerrar1" layoutX="428.0" layoutY="525.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="158.0" styleClass="green-button" text="Cambiar Contraseña" />
 
     <!-- Estilos inline -->
     <stylesheets>

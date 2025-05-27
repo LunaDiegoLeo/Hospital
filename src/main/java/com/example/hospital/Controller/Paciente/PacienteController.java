@@ -1,5 +1,7 @@
 package com.example.hospital.Controller.Paciente;
 
+import com.example.hospital.Model.Tablas.Paciente;
+import com.example.hospital.Vista.ContraView;
 import com.example.hospital.Vista.Paciente.CitasView;
 import com.example.hospital.Vista.Paciente.EstudiosView;
 import com.example.hospital.Vista.Paciente.InterView;
@@ -57,6 +59,13 @@ public class PacienteController {
     protected void estudios() throws IOException {
         EstudiosView view = new EstudiosView();
         view.mostrarCitas(usua.getText(), id);
+        cerrar.getScene().getWindow().hide();
+    }
+
+    @FXML
+    protected void cambiar() throws Exception {
+        ContraView view= new ContraView();
+        view.mostrar(usua.getText(),id,new Paciente("","","","",0,0,0,"","",""));
         cerrar.getScene().getWindow().hide();
     }
 }

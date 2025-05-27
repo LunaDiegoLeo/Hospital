@@ -29,3 +29,18 @@
 .red-button:hover {
     -fx-background-color: #B01C1C;
 }
+
+.green-button {
+    -fx-background-color: #7BEB90; /* Azul brillante */
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 10 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 1);
+}
+
+.green-button:hover {
+    -fx-background-color: #BAF5C5;
+}

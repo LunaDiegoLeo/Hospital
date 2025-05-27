@@ -5,6 +5,7 @@ import com.example.hospital.Model.ConexioBD;
 import com.example.hospital.Model.DaoFactory;
 import com.example.hospital.Model.Daos.Dao;
 import com.example.hospital.Model.Tablas.Paciente;
+import com.example.hospital.Vista.ContraView;
 import com.example.hospital.Vista.Doctor.CitasProxView;
 import com.example.hospital.Vista.Doctor.EstudiaView;
 import com.example.hospital.Vista.Doctor.Intervenir;
@@ -102,6 +103,13 @@ public class Doctor {
             Paciente paciente1= pacienteDaoDao.consultar(paciente);
             label.setText("Esta atendiendo al paciente: "+paciente1.getNombre());
         }
+    }
+
+    @FXML
+    protected void cambiar() throws Exception {
+        ContraView view= new ContraView();
+        view.mostrar(usua.getText(),id,new com.example.hospital.Model.Tablas.Doctor("","","","","","",0,0,1,"",1));
+        cerrar.getScene().getWindow().hide();
     }
 
 
