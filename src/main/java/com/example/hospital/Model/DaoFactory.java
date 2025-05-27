@@ -110,6 +110,21 @@ public enum DaoFactory {
             return new CitaMedicaDao(connection);
         }
 
+    },
+    SEINTERVIENE{
+        public Dao<?> crear(Connection connection) {
+            return new SeIntervieneDao(connection);
+        }
+    },
+    ESTUDIA{
+        public Dao<?> crear(Connection connection) {
+            return new EstudiaDao(connection);
+        }
+    },
+    RECETA{
+        public Dao<?> crear(Connection connection) {
+            return new RecetaDao(connection);
+        }
     };
 
     public abstract Dao<?> crear(Connection connection);

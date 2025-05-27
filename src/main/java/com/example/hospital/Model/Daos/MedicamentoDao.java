@@ -75,7 +75,7 @@ public class MedicamentoDao extends Dao<Medicamento> {
     @Override
     public ObservableList<Medicamento> listar() {
         ObservableList<Medicamento> medicamentos = javafx.collections.FXCollections.observableArrayList();
-        String sql = "SELECT idMedicamento, nombre, descripcion FROM Medicamento";
+        String sql = "SELECT idMedicamento, nombre, descripcion FROM Medicamento order by nombre";
         try (var preparedStatement = connection.prepareStatement(sql);
              var resultSet = preparedStatement.executeQuery()) {
             while (resultSet.next()) {

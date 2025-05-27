@@ -26,4 +26,6 @@ module com.example.hospital {
     opens com.example.hospital.Model.Daos to javafx.base, javafx.fxml;
     exports com.example.hospital.Model.Tablas;
     opens com.example.hospital.Model.Tablas to javafx.base, javafx.fxml;
+    exports com.example.hospital.Controller.Doctor;
+    opens com.example.hospital.Controller.Doctor to javafx.base, javafx.fxml;
 }

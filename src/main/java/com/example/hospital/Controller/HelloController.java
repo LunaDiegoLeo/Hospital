@@ -2,10 +2,12 @@ package com.example.hospital.Controller;
 
 import com.example.hospital.Model.Daos.Dao;
 import com.example.hospital.Model.DaoFactory;
+import com.example.hospital.Model.Tablas.Doctor;
 import com.example.hospital.Model.Tablas.Paciente;
 import com.example.hospital.Model.Tablas.Usuario;
 import com.example.hospital.Model.UsuarioBd;
 import com.example.hospital.Vista.Admin.AdminView;
+import com.example.hospital.Vista.Doctor.DoctorView;
 import com.example.hospital.Vista.Paciente.PacienteView;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -44,6 +46,11 @@ public class HelloController {
                     Paciente paciente = pacienteDaoDao.consultar(usuario1.getIdEx());
                     PacienteView pacienteView = new PacienteView();
                     pacienteView.mostrar(paciente.getNombre(),paciente.getIdPaciente());
+                } else if(usuario1.getTipo()==3){
+                    Dao<Doctor> doctoreDaoDao = (Dao<Doctor>) DaoFactory.DOCTOR.crear(connection);
+                    Doctor doc= doctoreDaoDao.consultar(usuario1.getIdEx());
+                    DoctorView doctorView = new DoctorView();
+                    doctorView.mostrar(doc.getNombre(),doc.getIdDoctor());
                 }
 
 

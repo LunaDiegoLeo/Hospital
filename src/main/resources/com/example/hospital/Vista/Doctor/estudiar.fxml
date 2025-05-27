@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="600.0" style="-fx-background-color: white;" stylesheets="@../../css/admin-style.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.hospital.Controller.Doctor.EstudiarController">
+
+    <!-- Título -->
+    <Label layoutX="30" layoutY="30" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #1E3A8A;" text="Estudiar paciente" />
+
+    <!-- Campos del formulario -->
+    <VBox layoutX="150.0" layoutY="90.0" prefHeight="186.0" prefWidth="300" spacing="15">
+        <children>
+
+            <!-- ID del paciente -->
+            <TextField fx:id="idCita" promptText="ID del paciente" stylesheets="@../../css/textff.css" />
+
+            <!-- Hora -->
+            <SplitMenuButton fx:id="horaSplit" disable="true" prefWidth="300.0" text="Selecciona un estudio a hacer" />
+
+            <!-- Botón agendar -->
+            <Button fx:id="boton" onAction="#intervenir" styleClass="blue-button" stylesheets="@../../css/admin-style.css" text="Estudiar" />
+
+        </children>
+    </VBox>
+
+    <!-- Botón regresar -->
+    <VBox layoutX="200.0" layoutY="420.0" prefHeight="68.0" prefWidth="200.0">
+        <children>
+            <Button fx:id="cerrar" onAction="#regresar" prefHeight="25.0" prefWidth="202.0" styleClass="red-button" text="Regresar" />
+        </children>
+    </VBox>
+
+    <!-- Label de usuario -->
+    <Label fx:id="usua" layoutX="118.0" layoutY="7.0" text="     ">
+        <font>
+            <Font name="Arial Bold" size="13.0" />
+        </font>
+    </Label>
+</AnchorPane>

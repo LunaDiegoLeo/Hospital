@@ -28,6 +28,11 @@
             <Font name="Arial Bold" size="13.0" />
         </font>
     </Label>
+   <Label layoutX="166.0" layoutY="380.0" text="Para cancelar citas, llamar al: 800 888 8366">
+      <font>
+         <Font name="Bauhaus 93" size="14.0" />
+      </font>
+   </Label>
 
     <!-- Estilos inline -->
     <stylesheets>
